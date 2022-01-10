@@ -1,7 +1,10 @@
 {
 	"User": {
 		"account": {
-			"int": { "min": 10000, "max": 99999 }
+			"int": { 
+				"min": 10000, 
+				"max": 99999 
+			}
 		},
 		"name": {
 			"string": {}
@@ -20,7 +23,10 @@
 			"regexp": "#[a-z]{5,10}@[a-z]{5}\\.[a-z]{2,3}"
 		},
 		"streetNumber": {
-			"int": { "max": 9999 }
+			"int": { 
+				"min": 10, 
+				"max": 9999 
+			}
 		},
 		"streetName": {
 			"string": {}
