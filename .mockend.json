@@ -1,1 +1,83 @@
-{"User":{"title":{"string":{}}}}
+{
+	"User": {
+		"account": {
+			"int": { "min": 10000, "max": 99999 }
+		},
+		"name": {
+			"string": {}
+		},
+		"avatarUrl": {
+			"regexp": "https://i\\.pravatar\\.cc/150?u=[0-9]{5}"
+		},
+		"statusMessage": {
+			"string": [
+				"Active",
+				"Inactive",
+				"Work In Progress"
+			]
+		},
+		"email": {
+			"regexp": "#[a-z]{5,10}@[a-z]{5}\\.[a-z]{2,3}"
+		},
+		"streetNumber": {
+			"int": { "max": 9999 }
+		},
+		"streetName": {
+			"string": {}
+		},
+		"streetType": {
+			"string": [
+				"Rd.",
+				"Ave.",
+				"Dr."
+			]
+		},
+		"state": {
+			"regexp": "[A-Z]{2}"
+		},
+		"timeZone": {
+			"string": [
+				"Central",
+				"Eastern",
+				"Pacific"
+			]
+		},
+		"DST": {
+			"boolean": {}
+		},
+		"template": {
+			"string": [
+				"Home One",
+				"Business",
+				"Commercial"
+			]
+		},
+		"phoneOne": {
+			"regexp": "1-[1-9]{3}-[1-9]{3}-[1-9]{4}"
+		},
+		"phoneTwo": {
+			"regexp": "1-[1-9]{3}-[1-9]{3}-[1-9]{4}"
+		},
+		"notes": {
+			"loremParagraphs": { 
+				"minLength": 200, 
+				"maxLength": 500 
+			}
+		},
+		"createdAt": {
+			"dateTime": {
+				"min": "2010-01-01T00:00:00Z",
+				"max": "2020-12-31T23:59:59Z"
+			}
+		},
+		"updatedAt": {
+			"dateTime": {
+				"min": "2010-01-01T00:00:00Z",
+				"max": "2020-12-31T23:59:59Z"
+			}
+		},
+		"isPublic": {
+			"boolean": {}
+		}
+	}
+}
