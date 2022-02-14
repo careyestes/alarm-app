@@ -4,7 +4,7 @@
 
 // Svelte Colors!
 @use '@material/theme/index' as theme with (
-  $primary: #ff3e00,
+  $primary: #17384D,
   $secondary: #676778,
   $surface: #fff,
   $background: #fff,
@@ -18,8 +18,84 @@ body {
 }
 
 a {
-  color: #40b3ff;
+  color: theme.$primary;
+  text-decoration: none;
 }
+
+a:hover {
+  color: lighten(theme.$primary, 20%);
+}
+
 a:visited {
-  color: color.scale(#40b3ff, $lightness: -35%);
+  color: darken(theme.$primary, 15%);
+}
+
+p {
+  margin: 0;
+}
+
+button {
+  background: transparent;
+  border: 0;
+  color: theme.$secondary;
+  &.solid {
+    background: theme.$primary;
+    color: theme.$surface;
+  }
+  &.stacked {
+    padding: 0.2rem;
+    span {
+      font-size: 0.5rem;
+      text-transform: uppercase;
+    }
+  }
+}
+
+main {
+  display: grid;
+  grid-template-areas: 
+    "nav"
+    "main"
+    "footer"
+  ;
+  width: 100vw;
+  height: 100vh;
+  grid-auto-rows: 56px 1fr 56px;
+  nav {
+    position: sticky;
+    top: 0;
+    grid-area: nav;
+    height: 56px;
+    background: theme.$background;
+    z-index: 5;
+  }
+  .slot-wrapper {
+    position: relative;
+    z-index: 6;
+    grid-area: main;
+  }
+
+  footer {
+    grid-area: footer;
+    background: theme.$secondary;
+  }
+}
+
+.flex {
+  display: flex;
+  &.flex-column {
+    flex-direction: column;
+  }
+  &.align-center {
+    align-items: center;
+    justify-content: center;
+  }
+}
+
+.flex-button-column {
+  flex: 0 0 56px;
+}
+
+.height-100 {
+  height: 100%;
 }
